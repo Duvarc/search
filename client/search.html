@@ -1,0 +1,22 @@
+<template name="search">
+<div class="page-header clearfix">
+<h4 class="pull-left">Terms</h4>
+<div class="pull-right">
+<input type="text" name="search" class="form-control" width="250px" placeolder="Search a term">
+</div>
+</div>
+
+<ul class="list-group">
+{{#if searching}}
+	{{> loading}}
+{{else}}
+	{{#each terms}}
+	<li class="list-group-item clearfix">
+		<span class="pull-left">{{term}}</span>
+	</li>
+	{{else}}
+		<p class="alert alert-warning">Nothing found for {{query}}</p>
+	{{/each}}
+{{/if}}
+</ul>
+</template>
